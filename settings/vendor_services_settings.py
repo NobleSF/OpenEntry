@@ -1,5 +1,13 @@
 import os
-from settings import LOCAL, STAGE, DEMO, PRODUCTION
+from settings import LOCAL, STAGE, DEMO, PRODUCTION, INSTALLED_APPS
+
+#Stormpath managed service for storing and accessing user data
+AUTHENTICATION_BACKENDS = ('django_stormpath.backends.StormpathBackend',)
+AUTH_USER_MODEL = 'django_stormpath.StormpathUser'
+USE_ID_SITE = False
+
+
+
 
 if not LOCAL:
   AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
@@ -9,6 +17,18 @@ if not LOCAL:
   DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
   STATICFILES_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
 
+  # STORMPATH
+  STORMPATH_ID = os.environ.get('STORMPATH_API_KEY_ID')
+  STORMPATH_SECRET = os.environ.get('STORMPATH_API_KEY_SECRET')
+  STORMPATH_APPLICATION = os.environ.get('STORMPATH_URL')
+  from stormpath.cache.redis_store import RedisStore
+  STORMPATH_CACHE_OPTIONS = {
+    'store': RedisStore,
+    'store_opts': {
+      'host': 'ec2-107-21-120-49.compute-1.amazonaws.com',
+      'port': 10829
+    }
+  }
 
   # #TRANSLOADIT
   # TRANSLOADIT_AUTH_KEY = os.environ.get('TRANSLOADIT_AUTH_KEY')
