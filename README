@@ -1,3 +1,21 @@
 OpenEntry Unified Platform Rebuild
-Technologies: PostgreSQL, Python, DjangoRestFramework, React.js
+Technologies: PostgreSQL, Redis, Python, DjangoRestFramework, React.js
 Hosts: Heroku, AWS
+
+Services in use:
+NewRelic for server monitoring and analytics
+Sendgrid for transactional email
+
+Services we'd like to try out:
+Stormpath for user account management and store access privileges
+PhraseApp for text translations
+Spreedly for payment gateways
+Filepicker for loading in product images from anywhere
+Transloadit or Firesize for image resizing
+Gioco Pro for some gameification elements in the store builder
+Keen.io for Analytics
+Adminium for database view interface
+Shared Workforce for a human touch regarding user-generated content: text and image quality
+Stream for building notification feeds
+
+choose a service for continuous integration when going to production
