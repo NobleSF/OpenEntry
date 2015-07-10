@@ -12,3 +12,21 @@ class User(Timestampable, Locatable, StormpathUser):
   USERNAME_FIELD  = 'username'
 
   phone = models.CharField(max_length=16, blank=True, null=True)
+
+
+
+
+#
+# STORMPATH NOTES
+# ====================================================================
+#
+# Python Documentation: http://docs.stormpath.com/python/
+#
+# Python-specific Blog posts:
+#
+# -https://stormpath.com/blog/improving-our-python-support/
+# -https://stormpath.com/blog/making-python-authentication-fast/
+# -https://stormpath.com/blog/stormpath-and-django/
+# -https://stormpath.com/blog/hosted-login-and-api-authentication-for-python/
+# -https://stormpath.com/blog/flask-auth-in-one-loc/
+#

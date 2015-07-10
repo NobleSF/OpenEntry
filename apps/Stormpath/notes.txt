@@ -1,9 +1,0 @@
-Python Documentation: http://docs.stormpath.com/python/
-
-Python-specific Blog posts:
-
--https://stormpath.com/blog/improving-our-python-support/
--https://stormpath.com/blog/making-python-authentication-fast/
--https://stormpath.com/blog/stormpath-and-django/
--https://stormpath.com/blog/hosted-login-and-api-authentication-for-python/
--https://stormpath.com/blog/flask-auth-in-one-loc/
