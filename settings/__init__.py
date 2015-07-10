@@ -35,10 +35,6 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = (
     'apps.common',
 )
-# 3rd Party Services
-INSTALLED_APPS += (
-    'django_stormpath',
-)
 #Django Services
 INSTALLED_APPS += (
     # 'django.contrib.admin',
@@ -47,6 +43,7 @@ INSTALLED_APPS += (
     'django.contrib.sessions',
     # 'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_extensions',
 )
 # if LOCAL or STAGE:
 #   INSTALLED_APPS = INSTALLED_APPS + ('debug_toolbar',)

@@ -1,1 +1,1 @@
-__author__ = 'tomcounsell'
+from apps.common.models.user import User

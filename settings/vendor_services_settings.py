@@ -2,6 +2,7 @@ import os
 from settings import LOCAL, STAGE, DEMO, PRODUCTION, INSTALLED_APPS
 
 #Stormpath managed service for storing and accessing user data
+INSTALLED_APPS += ('django_stormpath',)
 AUTHENTICATION_BACKENDS = ('django_stormpath.backends.StormpathBackend',)
 AUTH_USER_MODEL = 'django_stormpath.StormpathUser'
 USE_ID_SITE = False
