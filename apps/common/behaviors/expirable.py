@@ -2,6 +2,7 @@ from django.db import models
 
 
 class Expirable(models.Model):
+  valid_at      = models.DateTimeField(null=True)
   expired_at    = models.DateTimeField(null=True)
 
   @property
