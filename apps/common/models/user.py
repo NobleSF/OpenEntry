@@ -11,7 +11,7 @@ class User(Timestampable, Locatable, StormpathUser):
   REQUIRED_FIELDS = ['username']
   USERNAME_FIELD  = 'username'
 
-  phone = models.CharField(max_length=16, blank=True, null=True)
+  phone = models.CharField(max_length=16, null=True)
 
 
 

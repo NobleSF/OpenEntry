@@ -3,10 +3,10 @@ from apps.common.behaviors.timestampable import Timestampable
 
 
 class Address(Timestampable, models.Model):
-  address       = models.CharField(max_length=100, blank=True, null=True)
-  city          = models.CharField(max_length=35, blank=True, null=True)
-  region        = models.CharField(max_length=35, blank=True, null=True)
-  postal_code   = models.CharField(max_length=10, null=True, blank=True)
+  address       = models.CharField(max_length=100, null=True)
+  city          = models.CharField(max_length=35, null=True)
+  region        = models.CharField(max_length=35, null=True)
+  postal_code   = models.CharField(max_length=10, null=True)
 
   # MODEL PROPERTIES
   @property
