@@ -25,8 +25,8 @@ class SEOable(models.Model):
   og_product_price_currency = og_price_currency
   og_product_shipping_cost_amount = self.default_shipping_cost
   og_product_shipping_cost_currency = og_price_currency
-
   """
+
   class Meta:
     abstract = True
 

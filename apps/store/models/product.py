@@ -15,8 +15,6 @@ class Product(Timestampable, models.Model):
   store         = models.ForeignKey('store.Store')
   quantity      = models.IntegerField(default=0)
 
-
-
   #product description elements
   categories    = models.ManyToManyField('store.Category', related_name='products')
   colors        = JSONField()
@@ -28,8 +26,6 @@ class Product(Timestampable, models.Model):
 
   price         = models.IntegerField(null=True) #in units of defined currency
   currency      = models.ForeignKey('common.Currency', null=True) #default to self.store.default_currency
-
-  option_sets   = models.ManyToManyField('store.OptionSet', related_name='products')
 
   shipping_options = models.ManyToManyField('store.ShippingOption')
 

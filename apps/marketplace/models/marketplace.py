@@ -1,9 +1,9 @@
 from django.db import models
 from django_extensions.db.fields.json import JSONField
-from apps.common.behaviors import Timestampable, Permalinkable, Publishable
+from apps.common.behaviors import Timestampable, Permalinkable, Publishable, Annotatable
 
 
-class Marketplace(Timestampable, Publishable, Permalinkable, models.Model):
+class Marketplace(Timestampable, Publishable, Permalinkable, Annotatable, models.Model):
   """
   A unique marketplace managed by one or more users and encompassing many stores.
   Able to edit which products from included stores are available, but not able to edit products directly.

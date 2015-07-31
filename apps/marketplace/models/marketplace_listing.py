@@ -1,6 +1,6 @@
 from django.db import models
-from django_extensions.db.fields.json import JSONField
-from apps.common.models.base_listing import BaseListing
+
+from apps.common.abstract_models.base_listing import BaseListing
 
 
 class MarketplaceListing(BaseListing):
@@ -10,7 +10,7 @@ class MarketplaceListing(BaseListing):
   Inherites base model fields: product, currency, retail_price, sale_price, wholesale_price
   Inherits mixin fields: created_at, modified_at, published_at, unpublished_at, valid_at, expired_at, slug
   """
-  marketplace       = models.ForeignKey('marketplace.Marketplace')
+  marketplace   = models.ForeignKey('marketplace.Marketplace', related_name='listings')
 
 
   # MODEL PROPERTIES

@@ -3,9 +3,9 @@ from apps.common.behaviors import Timestampable
 
 
 class ExchangeRate(Timestampable, models.Model):
-  from_currency     = models.ForeignKey('common.Currency')
+  from_currency     = models.ForeignKey('common.Currency', related_name='exchange_rates')
   to_currency       = models.ForeignKey('common.Currency')
-  rate              = models.IntegerField()
+  rate              = models.FloatField()
 
   # MODEL PROPERTIES
 

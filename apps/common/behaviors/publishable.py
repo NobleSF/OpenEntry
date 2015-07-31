@@ -6,6 +6,9 @@ class Publishable(models.Model):
   published_at    = models.DateTimeField(null=True)
   unpublished_at  = models.DateTimeField(null=True)
 
+  class Meta:
+    abstract = True
+
   @property
   def is_published(self):
     from django.utils.timezone import now
@@ -14,9 +17,6 @@ class Publishable(models.Model):
       return True
     else:
       return False
-
-  class Meta:
-    abstract = True
 
 
 from .tests import BehaviorTestCaseMixin

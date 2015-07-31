@@ -4,3 +4,5 @@ from apps.common.behaviors.publishable import Publishable
 from apps.common.behaviors.timestampable import Timestampable
 from apps.common.behaviors.locatable import Locatable
 from apps.common.behaviors.SEOable import SEOable
+from apps.common.behaviors.authorable import Authorable
+from apps.common.behaviors.annotatable import Annotatable
