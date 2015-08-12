@@ -3,19 +3,23 @@ from apps.common.behaviors.timestampable import Timestampable
 
 
 class Address(Timestampable, models.Model):
-  address       = models.CharField(max_length=100, null=True)
+
+  line_1        = models.CharField(max_length=100, null=True)
+  line_2        = models.CharField(max_length=100, null=True)
+  line_3        = models.CharField(max_length=100, null=True)
   city          = models.CharField(max_length=35, null=True)
   region        = models.CharField(max_length=35, null=True)
   postal_code   = models.CharField(max_length=10, null=True)
+  country       = models.CharField(max_length=50, null=True)
 
   # MODEL PROPERTIES
   @property
   def inline_string(self):
-    string = "%s " % self.address
+    string = "%s " % self.line_1
     string += "%s" % self.city or ""
     string += ", %s " % self.region or ""
     return string
-    # return "%s %s, %s" % (self.address, self.city, self.state.abbreviation)
+    # return "%s %s, %s" % (self.line_1, self.city, self.state.abbreviation)
 
   @property
   def google_map_url(self):

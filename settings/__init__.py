@@ -66,8 +66,8 @@ MIDDLEWARE_CLASSES = (
 STATIC_URL = '/static/'
 
 
-if LOCAL:
-  MIDDLEWARE_CLASSES = MIDDLEWARE_CLASSES + ('debug_toolbar.middleware.DebugToolbarMiddleware',)
+# if LOCAL:
+#   MIDDLEWARE_CLASSES = MIDDLEWARE_CLASSES + ('debug_toolbar.middleware.DebugToolbarMiddleware',)
 
 #AUTOMATED AND UNIT TESTING
 TEST_RUNNER = 'django.test.runner.DiscoverRunner'

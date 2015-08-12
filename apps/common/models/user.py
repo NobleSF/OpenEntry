@@ -6,12 +6,12 @@ from apps.common.behaviors.locatable import Locatable
 from apps.common.behaviors.timestampable import Timestampable
 
 
-class User(Timestampable, Locatable, StormpathUser):
-  REQUIRED_FIELDS = StormpathUser.REQUIRED_FIELDS
-  REQUIRED_FIELDS = ['username']
-  USERNAME_FIELD  = 'username'
-
-  phone = models.CharField(max_length=16, null=True)
+# class User(Timestampable, Locatable, StormpathUser):
+#   REQUIRED_FIELDS = StormpathUser.REQUIRED_FIELDS
+#   REQUIRED_FIELDS = ['username']
+#   USERNAME_FIELD  = 'username'
+#
+#   phone = models.CharField(max_length=16, null=True)
 
 
 

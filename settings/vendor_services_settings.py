@@ -5,9 +5,7 @@ from settings import LOCAL, STAGE, DEMO, PRODUCTION, INSTALLED_APPS
 INSTALLED_APPS += ('django_stormpath',)
 AUTHENTICATION_BACKENDS = ('django_stormpath.backends.StormpathBackend',)
 AUTH_USER_MODEL = 'django_stormpath.StormpathUser'
-USE_ID_SITE = False
-
-
+USE_ID_SITE = True # enables Stormpath Login pages
 
 
 if not LOCAL:

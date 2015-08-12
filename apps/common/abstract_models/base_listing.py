@@ -4,7 +4,7 @@ from apps.common.utils import DollarField
 
 
 class BaseListing(Timestampable, Publishable, Expirable, Permalinkable, SEOable, models.Model):
-  product           = models.OneToOneField('apps.store.Product', related_name='listings')
+  product           = models.OneToOneField('store.Product')
 
   currency          = models.ForeignKey('common.Currency')
   retail_price      = DollarField()
