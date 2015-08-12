@@ -7,10 +7,27 @@ UserModel = get_user_model()
 class UserSerializer(serializers.HyperlinkedModelSerializer):
   class Meta:
     model = UserModel
-    fields = ('url', 'username', 'email', 'password',
-              'given_name', 'middle_name', 'surname')
+    fields = ('url', 'email', 'password',
+              'given_name', 'surname')
 
 # ViewSets define the view behavior.
 class UserViewSet(viewsets.ModelViewSet):
-  queryset = UserModel.objects.all()
-  serializer_class = UserSerializer
+    """
+    API endpoint that allows users to be viewed or edited.
+    """
+    queryset = User.objects.all().order_by('-date_joined')
+    serializer_class = UserSerializer
+
+
+# Groups
+class GroupSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Group
+        fields = ('url', 'name')
+
+class GroupViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that allows groups to be viewed or edited.
+    """
+    queryset = Group.objects.all()
+    serializer_class = GroupSerializer
