@@ -23,7 +23,7 @@ class Address(Timestampable, models.Model):
 
   @property
   def google_map_url(self):
-    return "http://maps.google.com/?q=%s" % self.inline_string
+    return "http://maps.google.com/?q=%s" % self.inline_string.replace(" ", "%20")
 
   # MODEL FUNCTIONS
   def __unicode__(self):
