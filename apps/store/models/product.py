@@ -12,7 +12,7 @@ class Product(Timestampable, models.Model):
   some categories may auto-assign specific option_sets
   """
 
-  store         = models.ForeignKey('store.Store')
+  store         = models.ForeignKey('store.Store', related_name='products')
   quantity      = models.IntegerField(default=0)
 
   #product description elements
@@ -33,9 +33,6 @@ class Product(Timestampable, models.Model):
 
   # MODEL FUNCTIONS
 
-
-  def __unicode__(self):
-    return unicode(self.title or self.id)
 
   class Meta:
     verbose_name_plural = 'products'

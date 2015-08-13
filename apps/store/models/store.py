@@ -21,9 +21,8 @@ class Store(Timestampable, Publishable, Permalinkable, models.Model):
 
   # MODEL FUNCTIONS
 
-
   def __unicode__(self):
-    return unicode(self.title or self.id)
+    return unicode(self.name or self.id)
 
   class Meta:
     verbose_name_plural = 'stores'

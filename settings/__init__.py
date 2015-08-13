@@ -48,19 +48,21 @@ INSTALLED_APPS += (
   'django_extensions',
   'rest_framework',
 )
-# if LOCAL or STAGE:
-#   INSTALLED_APPS = INSTALLED_APPS + ('debug_toolbar',)
+
+REST_FRAMEWORK = {
+  'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAdminUser',),
+  'PAGE_SIZE': 10
+}
 
 MIDDLEWARE_CLASSES = (
   'django.contrib.sessions.middleware.SessionMiddleware',
   'django.middleware.common.CommonMiddleware',
-  'django.middleware.csrf.CsrfViewMiddleware',
+  # 'django.middleware.csrf.CsrfViewMiddleware',
   'django.contrib.auth.middleware.AuthenticationMiddleware',
   'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
-  'django.contrib.messages.middleware.MessageMiddleware',
-  'django.middleware.clickjacking.XFrameOptionsMiddleware',
+  # 'django.contrib.messages.middleware.MessageMiddleware',
+  # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
-
 
 # Static files (CSS, JavaScript, Images) https://docs.djangoproject.com/en/1.7/howto/static-files/
 STATIC_URL = '/static/'
