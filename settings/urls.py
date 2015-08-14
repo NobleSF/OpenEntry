@@ -5,7 +5,7 @@ from rest_framework.reverse import reverse
 # from apps.store.views import api_root as store_api_root
 # from apps.store.views.store import StoreList, StoreDetail
 from apps.common.views import user, group, address, note
-from apps.store.views import product, store
+from apps.store.views import store, product, store_listing
 
 
 # Routers provide an easy way of automatically determining the URL conf.
@@ -20,6 +20,7 @@ router.register(r'notes', note.NoteViewSet)
 #store app
 router.register(r'stores', store.StoreViewSet)
 router.register(r'products', product.ProductViewSet)
+router.register(r'store_listings', store_listing.StoreListingViewSet)
 
 #marketplace app
 

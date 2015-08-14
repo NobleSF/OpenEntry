@@ -1,4 +1,3 @@
-
 from rest_framework import viewsets
 from apps.common.models import Address
 from apps.common.serializers.address import AddressSerializer
