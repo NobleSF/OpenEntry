@@ -31,14 +31,14 @@ TEMPLATE_DEBUG = LOCAL
 ALLOWED_HOSTS = []
 
 # Applications
-INSTALLED_APPS += (
+INSTALLED_APPS = (
   'apps.common',
   'apps.store',
   'apps.marketplace',
 )
 
 #Django Services
-INSTALLED_APPS = (
+INSTALLED_APPS += (
   # 'django.contrib.admin',
   'django.contrib.auth',
   'django.contrib.contenttypes',
@@ -78,7 +78,7 @@ TEST_RUNNER = 'django.test.runner.DiscoverRunner'
 ROOT_URLCONF = 'settings.urls'
 WSGI_APPLICATION = 'settings.wsgi.application'
 
-# DATABASE https://docs.djangoproject.com/en/1.7/ref/settings/#databases
+# DATABASE
 import dj_database_url
 if PRODUCTION or STAGE:
   DATABASES = {'default': dj_database_url.config()}
