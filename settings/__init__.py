@@ -67,9 +67,10 @@ MIDDLEWARE_CLASSES = (
 # Static files (CSS, JavaScript, Images) https://docs.djangoproject.com/en/1.7/howto/static-files/
 STATIC_URL = '/static/'
 
-
 # if LOCAL:
 #   MIDDLEWARE_CLASSES = MIDDLEWARE_CLASSES + ('debug_toolbar.middleware.DebugToolbarMiddleware',)
+
+TEMPLATE_DIRS = (os.path.join(SITE_ROOT, 'templates'),) # for browsable API
 
 #AUTOMATED AND UNIT TESTING
 TEST_RUNNER = 'django.test.runner.DiscoverRunner'

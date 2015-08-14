@@ -1,0 +1,31 @@
+{% extends "rest_framework/base.html" %}
+
+{# Override blocks with required customizations#}
+
+{#{% block bootstrap_theme %}#}
+{#    <link rel="stylesheet" href="http://bootswatch.com/yeti/bootstrap.min.css" type="text/css">#}
+{#{% endblock %}#}
+
+{% block title %}
+  Open Entry API
+{% endblock title %}
+
+{% block branding %}
+  <a class="navbar-brand" rel="nofollow" href="http://www.django-rest-framework.org">
+    Open Entry API
+    <span class="version">0.1</span>
+  </a>
+{% endblock branding %}
+
+{% block userlinks %}
+  <li>
+    <a href="http://www.django-rest-framework.org/">DRF Docs</a>
+  </li>
+  <li>
+    <a href="https://github.com/tomcounsell/OpenEntry">GitHub</a>
+  </li>
+  <li>
+    <a href="https://github.com/tomcounsell/Starfish">Starfish</a>
+  </li>
+  {{ block.super }}
+{% endblock userlinks %}
