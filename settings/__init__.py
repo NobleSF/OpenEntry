@@ -30,6 +30,13 @@ TEMPLATE_DEBUG = LOCAL
 
 ALLOWED_HOSTS = []
 
+# Applications
+INSTALLED_APPS += (
+  'apps.common',
+  'apps.store',
+  'apps.marketplace',
+)
+
 #Django Services
 INSTALLED_APPS = (
   # 'django.contrib.admin',
@@ -40,14 +47,6 @@ INSTALLED_APPS = (
   'django.contrib.staticfiles',
   'django_extensions',
   'rest_framework',
-)
-
-# Applications
-INSTALLED_APPS += (
-  'django_stormpath',
-  'apps.common',
-  'apps.store',
-  'apps.marketplace',
 )
 
 REST_FRAMEWORK = {
