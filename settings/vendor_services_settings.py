@@ -20,14 +20,14 @@ if not LOCAL:
   STORMPATH_ID = os.environ.get('STORMPATH_API_KEY_ID')
   STORMPATH_SECRET = os.environ.get('STORMPATH_API_KEY_SECRET')
   STORMPATH_APPLICATION = os.environ.get('STORMPATH_URL')
-  from stormpath.cache.redis_store import RedisStore
-  STORMPATH_CACHE_OPTIONS = {
-    'store': RedisStore,
-    'store_opts': {
-      'host': os.environ.get('REDIS_URL').split(':')[2].split("@")[1],
-      'port': os.environ.get('REDIS_URL').split(":")[3]
-    }
-  }
+  # from stormpath.cache.redis_store import RedisStore
+  # STORMPATH_CACHE_OPTIONS = {
+  #   'store': RedisStore,
+  #   'store_opts': {
+  #     'host': os.environ.get('REDIS_URL').split(':')[2].split("@")[1],
+  #     'port': os.environ.get('REDIS_URL').split(":")[3]
+  #   }
+  # }
 
   # #TRANSLOADIT
   # TRANSLOADIT_AUTH_KEY = os.environ.get('TRANSLOADIT_AUTH_KEY')
