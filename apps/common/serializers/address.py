@@ -3,9 +3,9 @@ from apps.common.models import Address
 
 
 class AddressSerializer(serializers.HyperlinkedModelSerializer):
-  created_at  = serializers.DateTimeField(read_only=True)
-  modified_at = serializers.DateTimeField(read_only=True)
-  google_map_url = serializers.URLField(read_only=True)
+  created_at      = serializers.DateTimeField(read_only=True)
+  modified_at     = serializers.DateTimeField(read_only=True)
+  google_map_url  = serializers.URLField(read_only=True)
 
   class Meta:
     model = Address
