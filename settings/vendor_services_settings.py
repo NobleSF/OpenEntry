@@ -24,7 +24,7 @@ if not LOCAL:
   STORMPATH_CACHE_OPTIONS = {
     'store': RedisStore,
     'store_opts': {
-      'host': os.environ.get('REDIS_URL').split(":")[2],
+      'host': os.environ.get('REDIS_URL').split(':')[2].split("@")[1],
       'port': os.environ.get('REDIS_URL').split(":")[3]
     }
   }
