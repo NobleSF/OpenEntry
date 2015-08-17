@@ -1,5 +1,5 @@
 from django.db import models
-from django_extensions.db.fields.json import JSONField
+
 from apps.common.behaviors import Timestampable, Permalinkable, Publishable, Annotatable
 
 

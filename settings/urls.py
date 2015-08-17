@@ -1,11 +1,9 @@
 from django.conf.urls import url, include
 from rest_framework import routers
-from rest_framework.reverse import reverse
 
-# from apps.store.views import api_root as store_api_root
-# from apps.store.views.store import StoreList, StoreDetail
 from apps.common.views import user, group, address, note
 from apps.store.views import store, product, store_category, store_listing
+from apps.marketplace.views import marketplace
 
 
 # Routers provide an easy way of automatically determining the URL conf.
@@ -24,7 +22,7 @@ router.register(r'store_listings', store_listing.StoreListingViewSet)
 router.register(r'store_categories', store_category.StoreCategoryViewSet)
 
 #marketplace app
-
+router.register(r'marketplaces', marketplace.MarketplaceViewSet)
 
 
 
