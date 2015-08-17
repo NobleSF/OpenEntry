@@ -18,4 +18,5 @@ class NoteSerializer(serializers.HyperlinkedModelSerializer):
     fields = ('url',
               'text',
               'author', 'authored_at',
-              'created_at', 'modified_at')
+              'created_at', 'modified_at',
+              )
