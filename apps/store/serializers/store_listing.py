@@ -9,17 +9,17 @@ class StoreListingSerializer(serializers.HyperlinkedModelSerializer):
   modified_at       = serializers.DateTimeField(read_only=True)
 
   #Publishable
-  published_at      = serializers.DateTimeField()
-  unpublished_at    = serializers.DateTimeField()
+  published_at      = serializers.DateTimeField(required=False)
+  unpublished_at    = serializers.DateTimeField(required=False)
   is_published      = serializers.BooleanField(read_only=True)
 
   #Expirable
-  valid_at          = serializers.DateTimeField()
-  expired_at        = serializers.DateTimeField()
+  valid_at          = serializers.DateTimeField(required=False)
+  expired_at        = serializers.DateTimeField(required=False)
   is_expired        = serializers.BooleanField(read_only=True)
 
   #Permalinkable
-  slug              = serializers.SlugField()
+  slug              = serializers.SlugField(required=False)
   get_absolute_url  = serializers.CharField(read_only=True)
 
   class Meta:

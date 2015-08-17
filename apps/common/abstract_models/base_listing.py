@@ -6,10 +6,10 @@ from apps.common.utils import DollarField
 class BaseListing(Timestampable, Publishable, Expirable, Permalinkable, SEOable, models.Model):
   product           = models.OneToOneField('store.Product')
 
-  currency          = models.ForeignKey('common.Currency')
-  retail_price      = DollarField()
-  sale_price        = DollarField()
-  wholesale_price   = DollarField()
+  currency          = models.ForeignKey('common.Currency', null=True)
+  retail_price      = DollarField(null=True)
+  sale_price        = DollarField(null=True)
+  wholesale_price   = DollarField(null=True)
 
 
   title             = models.CharField(max_length=100, null=True)

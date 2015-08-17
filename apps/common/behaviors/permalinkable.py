@@ -4,7 +4,7 @@ from django.dispatch import receiver
 
 
 class Permalinkable(models.Model):
-  slug = models.SlugField()
+  slug = models.SlugField(null=True)
 
   class Meta:
     abstract = True
