@@ -3,7 +3,7 @@ from rest_framework import routers
 
 from apps.common.views import user, group, address, note
 from apps.store.views import store, product, store_category, store_listing
-from apps.marketplace.views import marketplace
+from apps.marketplace.views import marketplace, marketplace_category
 
 
 # Routers provide an easy way of automatically determining the URL conf.
@@ -18,12 +18,12 @@ router.register(r'notes', note.NoteViewSet)
 #store app
 router.register(r'stores', store.StoreViewSet)
 router.register(r'products', product.ProductViewSet)
-router.register(r'store_listings', store_listing.StoreListingViewSet)
 router.register(r'store_categories', store_category.StoreCategoryViewSet)
+router.register(r'store_listings', store_listing.StoreListingViewSet)
 
 #marketplace app
 router.register(r'marketplaces', marketplace.MarketplaceViewSet)
-
+router.register(r'marketplace_categories', marketplace_category.MarketplaceCategoryViewSet)
 
 
 
