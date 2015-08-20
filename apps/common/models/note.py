@@ -3,7 +3,7 @@ from apps.common.behaviors import Timestampable, Authorable
 
 
 class Note(Timestampable, Authorable, models.Model):
-  text = models.TextField(default="")
+  text = models.TextField(default="", blank=True)
 
   # MODEL PROPERTIES
 

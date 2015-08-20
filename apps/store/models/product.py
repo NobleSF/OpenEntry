@@ -17,7 +17,7 @@ class Product(Timestampable, models.Model):
 
   #product description elements
   categories    = models.ManyToManyField('store.StoreCategory', related_name='products')
-  colors        = JSONField()
+  colors        = JSONField(default="", blank=True)
 
   width         = models.FloatField(null=True) #in meters
   height        = models.FloatField(null=True) #in meters

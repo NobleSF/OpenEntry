@@ -3,8 +3,8 @@ from django.db import models
 
 class Publishable(models.Model):
 
-  published_at    = models.DateTimeField(null=True)
-  unpublished_at  = models.DateTimeField(null=True)
+  published_at    = models.DateTimeField(null=True, blank=True)
+  unpublished_at  = models.DateTimeField(null=True, blank=True)
 
   class Meta:
     abstract = True

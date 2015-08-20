@@ -12,8 +12,8 @@ class Store(Timestampable, Publishable, Permalinkable, models.Model):
   """
 
   name              = models.CharField(max_length=50)
-  subdomain         = models.CharField(max_length=50)
-  domain            = models.CharField(max_length=100)
+  subdomain         = models.CharField(max_length=50, null=True, blank=True)
+  domain            = models.CharField(max_length=100, null=True, blank=True)
 
   default_currency  = models.ForeignKey('common.Currency', null=True)
 

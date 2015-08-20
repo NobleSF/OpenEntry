@@ -9,7 +9,7 @@ class BaseCategory(Timestampable, Permalinkable, models.Model):
   """
   name            = models.CharField(max_length=50)
   plural_name     = models.CharField(max_length=50)
-  keywords        = models.CharField(max_length=50, null=True)
+  keywords        = models.CharField(max_length=50, null=True, blank=True)
   parent_category = models.ForeignKey('self', related_name='sub_categories', null=True)
 
 

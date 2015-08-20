@@ -12,8 +12,8 @@ class Marketplace(Timestampable, Publishable, Permalinkable, Annotatable, models
   """
 
   name              = models.CharField(max_length=50)
-  subdomain         = models.CharField(max_length=50)
-  domain            = models.CharField(max_length=100)
+  subdomain         = models.CharField(max_length=50, blank=True)
+  domain            = models.CharField(max_length=100, blank=True)
 
 
   default_currency  = models.ForeignKey('common.Currency', null=True)

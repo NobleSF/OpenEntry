@@ -4,13 +4,13 @@ from apps.common.behaviors.timestampable import Timestampable
 
 class Address(Timestampable, models.Model):
 
-  line_1        = models.CharField(max_length=100, null=True)
-  line_2        = models.CharField(max_length=100, null=True)
-  line_3        = models.CharField(max_length=100, null=True)
-  city          = models.CharField(max_length=35, null=True)
-  region        = models.CharField(max_length=35, null=True)
-  postal_code   = models.CharField(max_length=10, null=True)
-  country       = models.CharField(max_length=50, null=True)
+  line_1        = models.CharField(max_length=100, null=True, blank=True)
+  line_2        = models.CharField(max_length=100, null=True, blank=True)
+  line_3        = models.CharField(max_length=100, null=True, blank=True)
+  city          = models.CharField(max_length=35, null=True, blank=True)
+  region        = models.CharField(max_length=35, null=True, blank=True)
+  postal_code   = models.CharField(max_length=10, null=True, blank=True)
+  country       = models.CharField(max_length=50, null=True, blank=True)
 
   # MODEL PROPERTIES
   @property
