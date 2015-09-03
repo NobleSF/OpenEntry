@@ -1,3 +1,4 @@
+import uuid
 from django.db import models
 from django_extensions.db.fields.json import JSONField
 from apps.common.behaviors import Timestampable, Permalinkable, Publishable, Expirable, Annotatable
@@ -9,9 +10,9 @@ class Membership(Timestampable, Expirable, Annotatable, models.Model):
 
   Inherites mixin fields: created_at, modified_at, valid_at, expired_at, notes
   """
-
-  marketplace     = models.ForeignKey('marketplace.Marketplace')
-  store           = models.ForeignKey('store.Store')
+  id                = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+  marketplace       = models.ForeignKey('marketplace.Marketplace')
+  store             = models.ForeignKey('store.Store')
 
   # MODEL PROPERTIES
 

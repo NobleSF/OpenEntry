@@ -1,3 +1,4 @@
+import uuid
 from django.db import models
 from apps.common.behaviors import Timestampable
 
@@ -12,6 +13,7 @@ class ShippingOption(Timestampable, models.Model):
   max_days
   cost
   """
+  id                = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
 
   # MODEL PROPERTIES
 

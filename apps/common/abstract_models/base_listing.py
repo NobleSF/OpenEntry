@@ -1,9 +1,11 @@
+import uuid
 from django.db import models
 from apps.common.behaviors import Timestampable, Publishable, Permalinkable, Expirable, SEOable
 from apps.common.utils import DollarField
 
 
 class BaseListing(Timestampable, Publishable, Expirable, Permalinkable, SEOable, models.Model):
+  id                = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
   product           = models.OneToOneField('store.Product')
 
   currency          = models.ForeignKey('common.Currency', null=True)

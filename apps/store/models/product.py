@@ -1,3 +1,4 @@
+import uuid
 from django.db import models
 from django_extensions.db.fields.json import JSONField
 from apps.common.behaviors import Timestampable
@@ -11,23 +12,23 @@ class Product(Timestampable, models.Model):
 
   some categories may auto-assign specific option_sets
   """
-
-  store         = models.ForeignKey('store.Store', related_name='products')
-  quantity      = models.IntegerField(default=0)
+  id                = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+  store             = models.ForeignKey('store.Store', related_name='products')
+  quantity          = models.IntegerField(default=0)
 
   #product description elements
-  categories    = models.ManyToManyField('store.StoreCategory', related_name='products')
-  colors        = JSONField(default="", blank=True)
+  categories        = models.ManyToManyField('store.StoreCategory', related_name='products')
+  colors            = JSONField(default="", blank=True)
 
-  width         = models.FloatField(null=True) #in meters
-  height        = models.FloatField(null=True) #in meters
-  length        = models.FloatField(null=True) #in meters
-  weight        = models.FloatField(null=True) #in grams
+  width             = models.FloatField(null=True) #in meters
+  height            = models.FloatField(null=True) #in meters
+  length            = models.FloatField(null=True) #in meters
+  weight            = models.FloatField(null=True) #in grams
 
-  price         = models.IntegerField(null=True) #in units of defined currency
-  currency      = models.ForeignKey('common.Currency', null=True) #default to self.store.default_currency
+  price             = models.IntegerField(null=True) #in units of defined currency
+  currency          = models.ForeignKey('common.Currency', null=True) #default to self.store.default_currency
 
-  shipping_options = models.ManyToManyField('store.ShippingOption')
+  shipping_options  = models.ManyToManyField('store.ShippingOption')
 
   # MODEL PROPERTIES
 

@@ -1,3 +1,4 @@
+import uuid
 from django.db import models
 
 from apps.common.behaviors import Timestampable, Permalinkable, Publishable, Annotatable
@@ -10,7 +11,7 @@ class Marketplace(Timestampable, Publishable, Permalinkable, Annotatable, models
 
   Inherites mixin fields: created_at, modified_at, published_at, unpublished_at, slug
   """
-
+  id                = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
   name              = models.CharField(max_length=50)
   subdomain         = models.CharField(max_length=50, blank=True)
   domain            = models.CharField(max_length=100, blank=True)
