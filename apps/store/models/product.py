@@ -17,6 +17,8 @@ class Product(Timestampable, models.Model):
   quantity          = models.IntegerField(default=0)
 
   #product description elements
+  name              = models.CharField(max_length=50, null=True, blank=True)
+  description       = models.CharField(max_length=50, null=True, blank=True)
   categories        = models.ManyToManyField('store.StoreCategory', related_name='products')
   colors            = JSONField(default="", blank=True)
 
