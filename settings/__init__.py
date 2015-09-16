@@ -48,10 +48,11 @@ INSTALLED_APPS += (
   'django_extensions',
   'rest_framework',
   'rest_framework_swagger',
+  'corsheaders',
 )
 
 REST_FRAMEWORK = {
-  'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAuthenticated',), # 'rest_framework.permissions.AllowAny'
+  'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.AllowAny',), # 'rest_framework.permissions.IsAuthenticated'
   'PAGE_SIZE': 10,
   'TEST_REQUEST_DEFAULT_FORMAT': 'json'
 }
@@ -64,7 +65,15 @@ MIDDLEWARE_CLASSES = (
   'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
   # 'django.contrib.messages.middleware.MessageMiddleware',
   # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
+  'corsheaders.middleware.CorsMiddleware',
+  'django.middleware.common.CommonMiddleware',
 )
+
+CORS_ORIGIN_ALLOW_ALL = True
+# CORS_ORIGIN_WHITELIST = (
+#     'herokuapp.com',
+#     'openentry.com'
+# )
 
 # Static files (CSS, JavaScript, Images) https://docs.djangoproject.com/en/1.7/howto/static-files/
 STATIC_URL = '/static/'
